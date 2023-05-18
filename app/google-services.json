@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "643987013055",
+    "firebase_url": "https://bee-billiard-club-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "bee-billiard-club",
+    "storage_bucket": "bee-billiard-club.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:643987013055:android:d127452d83a191caf8b50a",
+        "android_client_info": {
+          "package_name": "mob104.fpoly.myapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "643987013055-v4tjt7a4tp1nko6p5ng1u5drlqh3evpq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBM49UQEdBAxYilTnotTi5oJon4-Mvg0pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "643987013055-v4tjt7a4tp1nko6p5ng1u5drlqh3evpq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
