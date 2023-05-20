@@ -9,21 +9,21 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainManhinhcho extends AppCompatActivity {
-    Button btnNext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_manhinhcho);
 
-        btnNext = findViewById(R.id.btnChao);
-
-        btnNext.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainManhinhcho.this,MainActivity.class);
+            public void run() {
+                Intent intent =new Intent(MainManhinhcho.this,MainActivity.class);
                 startActivity(intent);
+                finish();
             }
-        });
+        }, 2000);
+
 
     }
 }
