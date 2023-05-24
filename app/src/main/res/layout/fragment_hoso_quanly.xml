@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:orientation="horizontal">\
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:layout_marginLeft="5dp"
+            android:src="@drawable/anhhsql"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Họ tên: Nguyễn Quản Lý"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái: Đang làm việc"
+                android:layout_marginLeft="15dp"
+                android:textColor="#E41E1E"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chúc một ngày tốt lành !!!!"
+        android:textColor="#00CC00"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:textSize="22dp"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Tài khoản "
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ed_taikhoan_hsql"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_botron"
+            android:text="adminquanly"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Lương"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ed_Luong_hsql"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_botron"
+            android:text="1000000đ"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:text="Số giờ đã làm hôm nay "
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <EditText
+            android:id="@+id/ed_sogiolam_hsql"
+            android:layout_width="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_height="50dp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_botron"
+            android:text="1h"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="30dp"
+        android:layout_gravity="center">
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_doimatkhau_hsql"
+        android:layout_width="300dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Đổi mật khẩu"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+
+        />
+    </LinearLayout>
+</LinearLayout>
