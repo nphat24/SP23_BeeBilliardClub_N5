@@ -12,6 +12,13 @@
         android:theme="@style/Theme.SP23_BeeBilliardClub_N5"
         tools:targetApi="31">
         <activity
+            android:name=".activities.Activity_banchoi"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.AddNvActivity"
             android:exported="false" />
         <activity
