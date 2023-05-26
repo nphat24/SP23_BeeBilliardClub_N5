@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#33CC66"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:textSize="24dp">
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="140dp"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/anhhsnv"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Họ tên: Nguyễn Văn A"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Tài khoản: anv123"
+                    android:layout_marginLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="10dp"
+            android:text="Mật khẩu"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_botron"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ed_mk_doimk_hsnv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:paddingLeft="18dp"
+                android:hint="Mật khẩu "
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:src="@drawable/eye" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:paddingLeft="10dp"
+            android:text="Mật khẩu mới"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/bg_botron"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/ed_mkmoi_doimk_hsnv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:paddingLeft="18dp"
+                android:hint="Mật khẩu mới"
+                android:inputType="textPassword" />
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10dp"
+                android:src="@drawable/eye" />
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:text="Xác nhận mật khẩu"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            />
+        <EditText
+            android:id="@+id/ed_xnmk_doimk_hsnv"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_height="52dp"
+            android:textColor="@color/black"
+            android:background="@drawable/bg_botron"
+            android:layout_marginLeft="10dp"
+            android:hint="Xác nhận mật khẩu mới"
+            android:inputType="text"
+            android:paddingLeft="18dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_Cancel_dmk_hsnv"
+                android:layout_width="131dp"
+                android:layout_height="67dp"
+                android:layout_marginLeft="55dp"
+                android:background="@drawable/bg_btn_sign_in"
+                android:textColor="@color/white"
+                android:backgroundTint="#008000"
+                android:text="Hủy"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_hoantat_doimk_hsnv"
+                android:layout_width="131dp"
+                android:layout_height="67dp"
+                android:layout_marginLeft="50dp"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_btn_sign_in"
+                android:text="Hoàn tất"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
