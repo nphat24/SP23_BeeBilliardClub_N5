@@ -4,7 +4,6 @@
     android:layout_height="match_parent"
     android:paddingLeft="10dp"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -14,7 +13,7 @@
             android:layout_width="100dp"
             android:layout_height="140dp"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/anhhsql"
+            android:src="@drawable/anhhsnv"
             />
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +24,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Họ tên: Nguyễn Quản Lý"
+                android:text="Họ tên: Nguyễn Văn A"
                 android:layout_marginLeft="15dp"
                 android:textColor="@color/black"
                 android:textSize="25dp"
@@ -67,40 +66,13 @@
             android:textSize="20sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/ed_taikhoan_hsql"
+            android:id="@+id/ed_taikhoan_hsnv"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
-            android:text="adminquanly"
-            android:inputType="text"
-            android:paddingLeft="18dp"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:text="Lương"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_Luong_hsql"
-            android:layout_width="match_parent"
-            android:layout_marginRight="20dp"
-            android:layout_height="50dp"
-            android:textColor="@color/black"
-            android:background="@drawable/bg_botron"
-            android:text="1000000đ"
+            android:text="anv123"
             android:inputType="text"
             android:paddingLeft="18dp"
             />
@@ -122,7 +94,7 @@
             android:textSize="20sp"
             android:textStyle="bold" />
         <EditText
-            android:id="@+id/ed_sogiolam_hsql"
+            android:id="@+id/ed_sogiolam_hsnv"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
             android:layout_height="50dp"
@@ -139,15 +111,15 @@
         android:gravity="center"
         android:paddingTop="30dp"
         android:layout_gravity="center">
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_doimatkhau_hsql"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="@drawable/bg_btn_sign_in"
-        android:text="Đổi mật khẩu"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_doimatkhau_hsql"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_btn_sign_in"
+            android:text="Đổi mật khẩu"
+            android:textColor="@color/white"
+            android:textSize="18sp"
 
-        />
+            />
     </LinearLayout>
 </LinearLayout>
