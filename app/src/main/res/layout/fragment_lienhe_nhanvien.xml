@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="30dp"
+        android:text="Hướng dẫn"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:textColor="@color/black"/>
+    <View
+        android:layout_width="130dp"
+        android:layout_marginLeft="32dp"
+        android:layout_height="2dp"
+        android:background="@color/black"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Cách sử dụng ứng dụng"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Điều khoản dành cho nhân viên"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Facebook Bee Billards Club"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Chính sách và quy định"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="32dp"
+        android:background="@drawable/bg_btn_sign_in"
+        android:text="Bảo mật thông tin"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="bold" />
+</LinearLayout>
