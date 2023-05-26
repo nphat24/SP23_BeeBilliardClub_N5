@@ -4,16 +4,17 @@
     android:background="#33CC66">
     <item
         android:id="@+id/action_search"
-        android:title="Srearch"
+        android:title="search"
         android:icon="@drawable/search"
         app:showAsAction="always"
+        android:tint="@color/white"
         app:actionViewClass="androidx.appcompat.widget.SearchView"/>
-    <item
-        android:id="@+id/action_notification"
-        android:title="Notification"
-        android:icon="@drawable/notification"
-        app:showAsAction="always"
-        app:actionViewClass="androidx.appcompat.widget.AppCompatButton"/>
+<!--    <item-->
+<!--        android:id="@+id/action_notification"-->
+<!--        android:title="Notification"-->
+<!--        android:icon="@drawable/notification"-->
+<!--        app:showAsAction="always"-->
+<!--        app:actionViewClass="androidx.appcompat.widget.AppCompatButton"/>-->
 
 
 </menu>
