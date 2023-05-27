@@ -88,7 +88,30 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:paddingLeft="10dp"
+                android:text="Sđt"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:layout_height="52dp"
+                android:textColor="@color/black"
+                android:background="@drawable/bg_botron"
+                android:layout_marginLeft="10dp"
+                android:text="09xxxxxxxx"
+                android:inputType="text"
+                android:paddingLeft="18dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:paddingLeft="10dp"
                 android:text="Mật khẩu mới"
@@ -125,7 +148,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:text="Xác nhận mật khẩu"
                 android:paddingLeft="10dp"
