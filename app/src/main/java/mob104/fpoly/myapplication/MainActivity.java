@@ -3,6 +3,8 @@ package mob104.fpoly.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
@@ -49,5 +51,12 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+    }
+
+    // start frg
+    private void replaceFragment(Fragment frg){
+        FragmentManager frm = getFragmentManager();
+        frm.beginTransaction().replace(R.id.content_frame,frg).commit();
     }
 }
