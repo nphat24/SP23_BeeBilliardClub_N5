@@ -22,12 +22,19 @@ public class MainActivity extends AppCompatActivity {
     QLHoadonFragment qlHoadonFragment = new QLHoadonFragment();
     LienheFragment lienheFragment = new LienheFragment();
     HosoFragment hosoFragment = new HosoFragment();
+    boolean isAdmin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+            // đoạn check admin
+//        bottomNavigationView = findViewById(R.id.nav_view);
+//        if (isAdmin) {
+//            bottomNavigationView.inflateMenu(R.menu.bottom_nav_menu);
+//        } else {
+//            bottomNavigationView.inflateMenu(R.menu.bottom_nav_nv);
+//        }
 
-        bottomNavigationView = findViewById(R.id.nav_view);
         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,homeFragment).commit();
 
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
