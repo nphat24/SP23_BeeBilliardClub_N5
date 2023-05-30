@@ -49,6 +49,18 @@
             android:name=".activities.SignInActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.Activity_quenmatkhau"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Activity_thongtinnhanvien"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Activity_doimatkhau_nhanvien"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Activity_doimatkhau_quanly"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity

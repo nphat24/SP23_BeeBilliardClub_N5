@@ -103,7 +103,7 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <EditText
-                android:id="@+id/ed_password"
+                android:id="@+id/ed_DN_password"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginRight="20dp"

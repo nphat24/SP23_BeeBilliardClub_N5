@@ -22,6 +22,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_thongtinnhanvien"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Họ tên: Nguyễn Văn A"
@@ -30,6 +31,7 @@
                 android:textSize="25dp"
                 android:textStyle="bold" />
             <TextView
+                android:id="@+id/tv_trangthai_nhanvien"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Trạng thái: Đang làm việc"
@@ -112,7 +114,7 @@
         android:paddingTop="30dp"
         android:layout_gravity="center">
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btn_doimatkhau_hsql"
+            android:id="@+id/btn_doimatkhau_hsnv"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:background="@drawable/bg_btn_sign_in"

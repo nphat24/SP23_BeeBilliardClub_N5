@@ -12,7 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
 import mob104.fpoly.myapplication.frag.HomeFragment;
-import mob104.fpoly.myapplication.frag.HosoFragment;
+import mob104.fpoly.myapplication.frag.HosoNhanvienFragment;
 import mob104.fpoly.myapplication.frag.LienheFragment;
 import mob104.fpoly.myapplication.frag.QLHoadonFragment;
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     HomeFragment homeFragment = new HomeFragment();
     QLHoadonFragment qlHoadonFragment = new QLHoadonFragment();
     LienheFragment lienheFragment = new LienheFragment();
-    HosoFragment hosoFragment = new HosoFragment();
+    HosoNhanvienFragment hosoNhanvienFragment = new HosoNhanvienFragment();
     boolean isAdmin = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,lienheFragment).commit();
                         return true;
                     case R.id.nav_Hoso:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame,hosoFragment).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.content_frame, hosoNhanvienFragment).commit();
                         return true;
 
                 }

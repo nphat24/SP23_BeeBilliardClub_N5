@@ -32,7 +32,7 @@
 
 
     <EditText
-        android:id="@+id/ed_user_name"
+        android:id="@+id/ed_DN_username"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginStart="32dp"
@@ -58,24 +58,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ed_user_name">
+        app:layout_constraintTop_toBottomOf="@+id/ed_DN_username">
 
-        <EditText
-            android:id="@+id/ed_password"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ed_DN_password"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.8"
-            android:background="#00000000"
-            android:hint="Mật khẩu"
-            android:inputType="textPassword"
-            android:paddingLeft="15dp" />
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:passwordToggleEnabled="true">
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:padding="10dp"
-
-            android:src="@drawable/eye" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="Mật khẩu"/>
+        </com.google.android.material.textfield.TextInputLayout>
 
     </LinearLayout>
 
@@ -91,7 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/cb_luumk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
@@ -130,7 +128,7 @@
     app:layout_constraintTop_toBottomOf="@+id/btn_sign_in">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/tv_quenmk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 

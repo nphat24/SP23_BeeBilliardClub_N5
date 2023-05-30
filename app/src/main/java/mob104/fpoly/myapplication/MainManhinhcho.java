@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
+import mob104.fpoly.myapplication.activities.SignInActivity;
+
 public class MainManhinhcho extends AppCompatActivity {
 
     @Override
@@ -18,11 +20,11 @@ public class MainManhinhcho extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent =new Intent(MainManhinhcho.this,MainActivity.class);
+                Intent intent =new Intent(MainManhinhcho.this, SignInActivity.class);
                 startActivity(intent);
                 finish();
             }
-        }, 2000);
+        }, 3000);
 
 
     }

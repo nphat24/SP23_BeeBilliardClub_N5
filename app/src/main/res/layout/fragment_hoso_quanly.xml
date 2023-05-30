@@ -23,6 +23,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_hoten_hsql"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Họ tên: Nguyễn Quản Lý"
@@ -31,6 +32,7 @@
                 android:textSize="25dp"
                 android:textStyle="bold" />
             <TextView
+                android:id="@+id/tv_trangthai_hsql"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Trạng thái: Đang làm việc"
@@ -66,13 +68,15 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_taikhoan_hsql"
+        <TextView
+            android:id="@+id/tv_taikhoan_hsql"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
+            android:paddingTop="13dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
+            android:textSize="18sp"
             android:text="adminquanly"
             android:inputType="text"
             android:paddingLeft="18dp"
@@ -93,13 +97,15 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_Luong_hsql"
+        <TextView
+            android:id="@+id/tv_luong_hsql"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
+            android:paddingTop="13dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
+            android:textSize="18sp"
             android:text="1000000đ"
             android:inputType="text"
             android:paddingLeft="18dp"
@@ -121,14 +127,16 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_sogiolam_hsql"
+        <TextView
+            android:id="@+id/tv_sogiolam_hsql"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
+            android:paddingTop="13dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
             android:text="1h"
+            android:textSize="18sp"
             android:inputType="text"
             android:paddingLeft="18dp"
             />

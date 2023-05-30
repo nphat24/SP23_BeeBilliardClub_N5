@@ -5,19 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <com.google.android.material.appbar.AppBarLayout
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/tbar_back_dmk_ql"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#33CC66"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:textSize="24dp">
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
+        android:background="@color/green"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/arrow_back_24"
+        app:title="Đổi mật khẩu quản lý"
+        app:titleCentered="true"
+        app:titleTextColor="#FFFFFF"
+        />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,6 +45,7 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/tv_hoten_doimk_hsql"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Họ tên: Nguyễn Quản Lý"
@@ -51,6 +54,7 @@
                         android:textSize="25dp"
                         android:textStyle="bold" />
                     <TextView
+                        android:id="@+id/tv_taikhoan_doimk_hsql"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="Tài khoản: adminquanly"
@@ -77,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:textColor="@color/black"
                 android:background="@drawable/bg_botron"
                 android:layout_marginLeft="10dp"
@@ -97,10 +101,11 @@
                 android:textColor="@color/black"
                 />
             <EditText
+                android:id="@+id/ed_sdt_doimk_hsql"
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:textColor="@color/black"
                 android:background="@drawable/bg_botron"
                 android:layout_marginLeft="10dp"
@@ -120,29 +125,28 @@
                 android:textColor="@color/black"
                 />
             <LinearLayout
-                android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="10dp"
                 android:background="@drawable/bg_botron"
                 android:orientation="horizontal">
 
-                <EditText
-                    android:id="@+id/ed_mkmoi_doimk_hsql"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ed_passwokmoi_doimk_hsql"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:paddingLeft="18dp"
-                    android:hint="Mật khẩu mới"
-                    android:inputType="textPassword" />
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:passwordToggleEnabled="true">
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:padding="10dp"
-                    android:src="@drawable/eye" />
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="Mật khẩu mới"/>
+                </com.google.android.material.textfield.TextInputLayout>
 
             </LinearLayout>
             <TextView
@@ -156,19 +160,31 @@
                 android:textSize="20dp"
                 android:textColor="@color/black"
                 />
-            <EditText
-                android:id="@+id/ed_xnmk_doimk_hsql"
+            <LinearLayout
                 android:layout_width="match_parent"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="52dp"
-                android:textColor="@color/black"
-                android:background="@drawable/bg_botron"
                 android:layout_marginLeft="10dp"
-                android:hint="Xác nhận mật khẩu mới"
-                android:inputType="text"
-                android:paddingLeft="18dp"
-                />
+                android:background="@drawable/bg_botron"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/ed_xacnhanmk_doimk_hsql"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    app:passwordToggleEnabled="true">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textPassword"
+                        android:hint="Xác nhận mật khẩu"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
