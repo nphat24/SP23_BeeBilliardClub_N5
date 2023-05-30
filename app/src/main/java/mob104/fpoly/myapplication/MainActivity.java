@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
             // đoạn check admin
-//        bottomNavigationView = findViewById(R.id.nav_view);
+        bottomNavigationView = findViewById(R.id.nav_view);
 //        if (isAdmin) {
 //            bottomNavigationView.inflateMenu(R.menu.bottom_nav_menu);
 //        } else {
