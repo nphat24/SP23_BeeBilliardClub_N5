@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activities.Activity_banchoi">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -15,14 +16,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Quản lý giờ chơi"
+            android:text="Bàn chơi"
             android:textSize="25dp"
             android:textColor="@color/white"
             android:textStyle="bold"
             android:textAlignment="center"/>
-
-
     </androidx.appcompat.widget.Toolbar>
+
+
+
 
 
 
