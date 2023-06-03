@@ -48,6 +48,7 @@ public class Activity_banchoi extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
             // Xử lý ngoại lệ ở đây
+            // aaa
         }
 
         textView.setText("Bắt đầu chơi : " + stringStartTime);
