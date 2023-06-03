@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-=======
+
 import android.app.TimePickerDialog;
 import android.content.DialogInterface;
 import android.graphics.Color;
@@ -72,6 +72,7 @@ public class Activity_banchoi extends AppCompatActivity {
         } catch (ParseException e) {
             e.printStackTrace();
             // Xử lý ngoại lệ ở đây
+            // aaa
         }
 
         textView.setText("Bắt đầu chơi : " + stringStartTime);
