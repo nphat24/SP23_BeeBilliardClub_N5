@@ -2,6 +2,7 @@ package mob104.fpoly.myapplication.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,15 +16,38 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+=======
+import android.app.TimePickerDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+
+import android.widget.TimePicker;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import mob104.fpoly.myapplication.R;
 
 public class Activity_banchoi extends AppCompatActivity {
     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
+    TextView tvTimeCur;
+    LinearLayout btnTime;
+    TextView tvTime;
+    ImageView img;
+    boolean isPlaying = false;
+
+
+    TextView tvshowTime;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_qlgiochoi_ql);
         TextView textView = findViewById(R.id.tv_batdauchoi_qlgiochoi_ql);
         TextView textView2 = findViewById(R.id.tv_thoigianchoi_qlgiochoi_ql);
@@ -79,5 +103,6 @@ public class Activity_banchoi extends AppCompatActivity {
         Log.d("zzzzz", "SaveEndTime: " + ref);
 
         ref.child("end").setValue(endTime);
+
     }
 }

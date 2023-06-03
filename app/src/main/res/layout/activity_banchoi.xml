@@ -1,31 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activities.Activity_banchoi">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/materialToolbar2"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="#33CC66"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:textSize="24dp">
+        android:layout_height="wrap_content"
+        android:background="@color/green"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="Quản lý giờ chơi"
+        app:titleCentered="true"
+        app:titleTextColor="@color/white"
+        app:navigationIcon="@drawable/arrow_back_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialToolbar2">
+
         <TextView
+            android:id="@+id/name_ban"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Bàn chơi"
+            android:paddingLeft="10dp"
+            android:paddingVertical="5dp"
+            android:textSize="20dp"
+            android:background="#D9D9D9"
+            android:textColor="@color/black"
+            />
+        <TextView
+            android:id="@+id/tv_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
             android:textSize="25dp"
-            android:textColor="@color/white"
+            android:text="Bàn đã sử dụng"
             android:textStyle="bold"
             android:textAlignment="center"/>
     </androidx.appcompat.widget.Toolbar>
+            android:textColor="#FF0000"
+            />
+        <TextView
+            android:id="@+id/tv_time_current"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:text="Thời gian bắt đầu: 00-00"
+            />
+        <TextView
+            android:id="@+id/tv_play_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:text="Thời gian chơi: 00:00"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:background="#D9D9D9"
+            android:layout_marginVertical="10dp"
+            android:layout_height="2dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_marginTop="5dp"
+    android:weightSum="1"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_weight="0.7"
+        android:paddingLeft="10dp"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:text="Thời gian"
+            />
+        <TextView
+            android:id="@+id/tv_start_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:text="15:00"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginTop="5dp"
+            android:text="09/10/2023"
+            />
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/btn_time"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="0.2"
+        android:paddingLeft="15dp"
+        android:background="#BCBABA"
+        android:paddingVertical="3dp"
+        android:layout_height="wrap_content">
 
-
-
-
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@drawable/batdau" />
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="18dp"
+            android:layout_marginLeft="10dp"
+            android:text="bắt đầu"
+            />
+    </LinearLayout>
 </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
