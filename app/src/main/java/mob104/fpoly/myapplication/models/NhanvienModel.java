@@ -1,5 +1,7 @@
 package mob104.fpoly.myapplication.models;
 
+import androidx.annotation.NonNull;
+
 public class NhanvienModel {
     private String name ;
     private String passwd;
@@ -56,5 +58,11 @@ public class NhanvienModel {
 
     public void setGroup(String group) {
         this.group = group;
+    }
+
+    @NonNull
+    @Override
+    public String toString() {
+        return "User:" + username + passwd;
     }
 }
