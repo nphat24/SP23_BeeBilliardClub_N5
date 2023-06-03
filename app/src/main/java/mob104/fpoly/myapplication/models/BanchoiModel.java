@@ -1,15 +1,25 @@
 package mob104.fpoly.myapplication.models;
 
 public class BanchoiModel {
+    private String Name;
     private String Start;
     private String End;
 
     public BanchoiModel() {
     }
 
-    public BanchoiModel(String start, String end) {
+    public BanchoiModel(String name, String start, String end) {
+        Name = name;
         Start = start;
         End = end;
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public String getStart() {

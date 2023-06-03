@@ -27,7 +27,7 @@ import mob104.fpoly.myapplication.models.BanchoiModel;
 
 public class Home_Tatca_Fragment extends Fragment {
     FirebaseDatabase database = FirebaseDatabase.getInstance("https://bee-billiard-club-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    private List<BanchoiModel> banchoiModels;
+    private List<BanchoiModel> banchoiModels = new ArrayList<>();
     private GridView gridView;
     private BanchoiAdapter banchoiAdapter;
     @Nullable
@@ -35,14 +35,22 @@ public class Home_Tatca_Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_tatca,container,false);
         FirebaseApp.initializeApp(getContext());
-        loadBanchoi(view);
+
         return view;
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        loadBanchoi(view);
+    }
+
+
 
     private void loadBanchoi(View view){
         DatabaseReference ref = database.getReference();
         gridView = view.findViewById(R.id.gv_tatca);
-        banchoiModels = new ArrayList<>();
+
         banchoiAdapter = new BanchoiAdapter(getContext(),banchoiModels);
         gridView.setAdapter(banchoiAdapter);
 
@@ -50,13 +58,14 @@ public class Home_Tatca_Fragment extends Fragment {
         ref.child("Table").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                banchoiModels.clear();
 
                 for(DataSnapshot contentDataSnapshot: dataSnapshot.getChildren()){
                     BanchoiModel banchoiModel = contentDataSnapshot.getValue(BanchoiModel.class);
                     banchoiModels.add(banchoiModel);
 
                 }
-                banchoiAdapter.notifyDataSetChanged();
+               banchoiAdapter.notifyDataSetChanged();
             }
 
             @Override

@@ -22,7 +22,7 @@ public class HomeAdapter extends FragmentStateAdapter {
                 return new Home_Tatca_Fragment();
             case 1:
                 return new Home_Sudung_Fragment();
-            case 3:
+            case 2:
                 return new Home_Controng_Fragment();
             default:
                 return new Home_Tatca_Fragment();
