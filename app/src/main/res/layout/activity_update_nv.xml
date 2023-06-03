@@ -38,10 +38,10 @@
             android:gravity="center"
             android:paddingTop="10dp">
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="227dp"
+                android:layout_height="150dp"
                 android:layout_marginLeft="5dp"
-                android:src="@drawable/anhhsql" />
+                android:src="@drawable/anh" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
