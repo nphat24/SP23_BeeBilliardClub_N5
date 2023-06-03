@@ -1,5 +1,7 @@
 package mob104.fpoly.myapplication.activities;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,9 +16,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.List;
 
 import mob104.fpoly.myapplication.MainActivity;
 import mob104.fpoly.myapplication.R;
+import mob104.fpoly.myapplication.models.BanchoiModel;
+import mob104.fpoly.myapplication.models.NhanvienModel;
 
 public class SignInActivity extends AppCompatActivity {
     TextInputLayout ed_DN_password;
@@ -25,6 +38,9 @@ public class SignInActivity extends AppCompatActivity {
     TextView tv_quenmk;
     CheckBox cb_luumk;
     String strUser, strPass;
+
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://bee-billiard-club-default-rtdb.asia-southeast1.firebasedatabase.app/");
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,17 +77,52 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void checkLogin(){
-        strUser = ed_DN_username.getText().toString();
-        strPass = ed_DN_password.getEditText().getText().toString();
+        strUser = ed_DN_username.getText().toString().trim();
+        strPass = ed_DN_password.getEditText().getText().toString().trim();
 
-        if(strUser.isEmpty()||strPass.isEmpty()){
-            Toast.makeText(getApplicationContext(), "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
-            rememberUser(strUser, strPass, cb_luumk.isChecked());
-            Intent intent1 = new Intent(SignInActivity.this, MainActivity.class);
-            startActivity(intent1);
-        }
+        DatabaseReference ref = database.getReference("User");
+        ref.addChildEventListener(new ChildEventListener() {
+
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                NhanvienModel nhanvienModel = snapshot.getValue(NhanvienModel.class);
+                if(strUser.isEmpty()||strPass.isEmpty()) {
+                    Toast.makeText(getApplicationContext(), "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
+                }else if (nhanvienModel != null){
+                    if (nhanvienModel.getUsername().equals(strUser) && nhanvienModel.getPasswd().equals(strPass)){
+                        Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
+                        rememberUser(strUser, strPass, cb_luumk.isChecked());
+                        Intent intent1 = new Intent(SignInActivity.this, MainActivity.class);
+                        startActivity(intent1);
+                    }else {
+                        Toast.makeText(getApplicationContext(), "Tài khoản hoặc mật khẩu của bạn nhập sai", Toast.LENGTH_SHORT).show();
+                    }
+                }else {
+                    Toast.makeText(getApplicationContext(), "Hiện tại chưa có tài khoản hoạt động !", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     public void rememberUser(String u, String p, boolean status){
