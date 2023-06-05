@@ -9,6 +9,7 @@ import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.FirebaseDatabase;
 
 import mob104.fpoly.myapplication.MainActivity;
 import mob104.fpoly.myapplication.R;
@@ -17,6 +18,7 @@ public class Activity_quenmatkhau extends AppCompatActivity {
     EditText ed_cccd_quenmk, ed_xacnhanmk_quenmk , ed_user_name_quenmk;
     Button btn_thaydmk_quenmk;
     TextInputLayout ed_password_quenmk;
+    FirebaseDatabase database = FirebaseDatabase.getInstance("https://bee-billiard-club-default-rtdb.asia-southeast1.firebasedatabase.app/");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
