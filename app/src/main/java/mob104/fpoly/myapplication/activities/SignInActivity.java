@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -39,8 +40,8 @@ public class SignInActivity extends AppCompatActivity {
     CheckBox cb_luumk;
     String strUser, strPass;
 
-    FirebaseDatabase database = FirebaseDatabase.getInstance("https://bee-billiard-club-default-rtdb.asia-southeast1.firebasedatabase.app/");
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference userReference = database.getReference().child("User");
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,10 +61,39 @@ public class SignInActivity extends AppCompatActivity {
         ed_DN_username.setText(user);
         cb_luumk.setChecked(luuMk);
 
+
+        // select user firebase
+        userReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    // Dữ liệu tồn tại trong bảng User
+                    Log.d("User", " Dữ liệu tồn tại trong bảng User");
+
+                    for (DataSnapshot userSnapshot: snapshot.getChildren()){
+                        // thuộc tính userName của user trong child là tên cột getva là kiểu dữ liệu
+                        String username = userSnapshot.child("username").getValue(String.class);
+                        System.out.println("Username: " + username);
+                        Log.e("User", username );
+
+                    }
+                } else {
+                    // Không có dữ liệu trong bảng "User"
+                    Log.d("User", "Không có dữ liệu trong bảng User");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Xử lý lỗi nếu cần
+            }
+        });
+
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                checkLogin();
+//                checkLogin();
+
             }
         });
 
@@ -75,6 +105,11 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+
+
 
     public void checkLogin(){
         strUser = ed_DN_username.getText().toString().trim();
