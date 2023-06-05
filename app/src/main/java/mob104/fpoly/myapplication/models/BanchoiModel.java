@@ -4,14 +4,16 @@ public class BanchoiModel {
     private String Name;
     private String Start;
     private String End;
+    private String Price;
 
     public BanchoiModel() {
     }
 
-    public BanchoiModel(String name, String start, String end) {
+    public BanchoiModel(String name, String start, String end, String price) {
         Name = name;
         Start = start;
         End = end;
+        Price = price;
     }
 
     public String getName() {
@@ -36,5 +38,13 @@ public class BanchoiModel {
 
     public void setEnd(String end) {
         End = end;
+    }
+
+    public String getPrice() {
+        return Price;
+    }
+
+    public void setPrice(String price) {
+        Price = price;
     }
 }

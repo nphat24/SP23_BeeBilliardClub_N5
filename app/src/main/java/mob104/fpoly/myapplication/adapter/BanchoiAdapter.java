@@ -103,7 +103,7 @@ public class BanchoiAdapter extends BaseAdapter {
                     // đang chơi
                     Intent intent = new Intent(context, Activity_banchoi.class);
                     intent.putExtra("start",dataModels.get(position).getStart());
-                    intent.putExtra("position", position+"");
+                    intent.putExtra("price", dataModels.get(position).getPrice());
 
                     context.startActivity(intent);
 
@@ -139,7 +139,7 @@ public class BanchoiAdapter extends BaseAdapter {
                             SaveStartTime(position, currentDateTime);
                             Intent intent = new Intent(context, Activity_banchoi.class);
                             intent.putExtra("start",currentDateTime);
-                            intent.putExtra("position", position+"");
+                            intent.putExtra("price", dataModels.get(position).getPrice());
                             context.startActivity(intent);
                             alertDialog.dismiss();
                         }
