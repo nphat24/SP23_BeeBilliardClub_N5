@@ -3,6 +3,8 @@ package mob104.fpoly.myapplication.models;
 import androidx.annotation.NonNull;
 
 public class NhanvienModel {
+    // id khi lấy key từ firebase về
+    private String id;
     private String name;
     private String username;
     private String password;
@@ -10,6 +12,14 @@ public class NhanvienModel {
     private String group;
     private double luong;
     private String cccd;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
