@@ -176,6 +176,7 @@
         android:paddingBottom="20dp"
         android:background="@drawable/border">
         <TextView
+            android:id="@+id/tv_tenhang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="40"
@@ -184,6 +185,7 @@
             android:textStyle="bold"
             android:text="Từ 14/5/2003 16:00 đến 17/5/2003 18:00 (2 giờ 0 phút)"/>
         <TextView
+            android:id="@+id/tv_dongia"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -193,6 +195,7 @@
             android:textStyle="bold"
             android:text="90.000 đ"/>
         <TextView
+            android:id="@+id/tv_soluong"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
@@ -201,6 +204,7 @@
             android:textStyle="bold"
             android:text="x 2"/>
         <TextView
+            android:id="@+id/tv_thanhtien"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -231,6 +235,7 @@
             android:textStyle="bold"
             android:text="Tổng tiền hàng"/>
         <TextView
+            android:id="@+id/tv_tongtienhang"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -292,6 +297,7 @@
             android:textStyle="bold"
             android:text="Tổng cộng"/>
         <TextView
+            android:id="@+id/tv_tongcong"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"

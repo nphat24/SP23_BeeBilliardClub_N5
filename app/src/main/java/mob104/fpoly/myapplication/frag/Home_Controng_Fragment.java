@@ -61,7 +61,7 @@ public class Home_Controng_Fragment extends Fragment {
 
                 for(DataSnapshot contentDataSnapshot: dataSnapshot.getChildren()){
                     BanchoiModel banchoiModel = contentDataSnapshot.getValue(BanchoiModel.class);
-                    if(banchoiModel.getStart().length() == 0){
+                    if(banchoiModel.getStart().length() < 1){
                         banchoiModels.add(banchoiModel);
                     }
 
