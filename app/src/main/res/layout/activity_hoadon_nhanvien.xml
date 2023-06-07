@@ -48,6 +48,7 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp">
         <TextView
+            android:id="@+id/tv_tonggiochoi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="40"
@@ -56,6 +57,7 @@
             android:textStyle="bold"
             android:text="Từ 14/5/2003 16:00 đến 17/5/2003 18:00 (2 giờ 0 phút)"/>
         <TextView
+            android:id="@+id/tv_price"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -65,14 +67,16 @@
             android:textStyle="bold"
             android:text="90.000 đ"/>
         <TextView
+            android:id="@+id/tv_giochoi"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="10"
             android:textSize="15dp"
             android:textColor="@color/black"
             android:textStyle="bold"
-            android:text="x 2"/>
+            android:text="2"/>
         <TextView
+            android:id="@+id/tv_total_money"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="30"
@@ -99,15 +103,18 @@
         android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_giochoi2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textSize="15dp"
             android:paddingStart="10dp"
+            android:text="Tổng giờ chơi: 2"
             android:textColor="@color/black"
-            android:textStyle="bold"
-            android:text="Tổng giờ chơi: 2"/>
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
         <TextView
+            android:id="@+id/tv_total_money2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -125,6 +132,7 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_huy"
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:textColor="@color/white"
@@ -134,6 +142,7 @@
             android:textStyle="bold" />
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_hoantat"
             android:layout_width="205dp"
             android:layout_height="match_parent"
             android:textColor="@color/white"

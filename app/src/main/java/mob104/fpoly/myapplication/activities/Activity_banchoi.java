@@ -56,7 +56,8 @@ public class Activity_banchoi extends AppCompatActivity {
 
         Intent intent = getIntent();
         String stringStartTime = intent.getStringExtra("start");
-        String position = intent.getStringExtra("position");
+        String price = intent.getStringExtra("price");
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
@@ -65,7 +66,7 @@ public class Activity_banchoi extends AppCompatActivity {
             long duration = endDate.getTime() - startTime.getTime();
             long hours = duration / (60 * 60 * 1000);
             long minutes = (duration % (60 * 60 * 1000)) / (60 * 1000);
-            long seconds = (duration % (60 * 1000)) / 1000;
+            // long seconds = (duration % (60 * 1000)) / 1000;
 
             textView2.setText("Thời gian chơi : " + hours + " giờ " + minutes + " phút ");
 
@@ -91,7 +92,13 @@ public class Activity_banchoi extends AppCompatActivity {
                 Date date = new Date();
                 SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
                 String currentDateTime = dateFormat.format(date);
-                SaveEndTime(position, currentDateTime);
+                //SaveEndTime(position, currentDateTime);
+
+                Intent intent1 = new Intent(Activity_banchoi.this, Activity_hoadon_nhanvien.class);
+                intent1.putExtra("start", stringStartTime);
+                intent1.putExtra("end",currentDateTime);
+                intent1.putExtra("price", price);
+                startActivity(intent1);
 
             }
         });
