@@ -4,21 +4,11 @@ import androidx.annotation.NonNull;
 
 public class NhanvienModel {
     private String name ;
-    private String passwd;
-    private String phonenumber;
+    private int passwd;
+    private int phonenumber;
     private String username;
     private String group;
-
-    public NhanvienModel() {
-    }
-
-    public NhanvienModel(String name, String passwd, String phonenumber, String username, String group) {
-        this.name = name;
-        this.passwd = passwd;
-        this.phonenumber = phonenumber;
-        this.username = username;
-        this.group = group;
-    }
+    private String cccd;
 
     public String getName() {
         return name;
@@ -28,19 +18,19 @@ public class NhanvienModel {
         this.name = name;
     }
 
-    public String getPasswd() {
+    public int getPasswd() {
         return passwd;
     }
 
-    public void setPasswd(String passwd) {
+    public void setPasswd(int passwd) {
         this.passwd = passwd;
     }
 
-    public String getPhonenumber() {
+    public int getPhonenumber() {
         return phonenumber;
     }
 
-    public void setPhonenumber(String phonenumber) {
+    public void setPhonenumber(int phonenumber) {
         this.phonenumber = phonenumber;
     }
 
@@ -60,9 +50,46 @@ public class NhanvienModel {
         this.group = group;
     }
 
-    @NonNull
-    @Override
-    public String toString() {
-        return "User:" + username + passwd;
+    public String getCccd() {
+        return cccd;
     }
+
+    public void setCccd(String cccd) {
+        this.cccd = cccd;
+    }
+
+    public String getLuong() {
+        return luong;
+    }
+
+    public void setLuong(String luong) {
+        this.luong = luong;
+    }
+
+    public String getNgaysinh() {
+        return ngaysinh;
+    }
+
+    public void setNgaysinh(String ngaysinh) {
+        this.ngaysinh = ngaysinh;
+    }
+
+    private String luong;
+    private String ngaysinh;
+
+    public NhanvienModel(String name, int passwd, int phonenumber, String username, String group, String cccd, String luong, String ngaysinh) {
+        this.name = name;
+        this.passwd = passwd;
+        this.phonenumber = phonenumber;
+        this.username = username;
+        this.group = group;
+        this.cccd = cccd;
+        this.luong = luong;
+        this.ngaysinh = ngaysinh;
+    }
+
+    public NhanvienModel() {
+    }
+
+
 }
