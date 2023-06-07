@@ -65,8 +65,6 @@ public class SignInActivity extends AppCompatActivity {
         cb_luumk.setChecked(luuMk);
 
 
-
-
         btn_sign_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -83,8 +81,8 @@ public class SignInActivity extends AppCompatActivity {
                             for (DataSnapshot userSnapshot: snapshot.getChildren()){
                                 // thuộc tính userName của user trong child là tên cột getva là kiểu dữ liệu
                                 String username = userSnapshot.child("username").getValue(String.class);
-                                int passwd1 = userSnapshot.child("passwd").getValue(int.class);
-                                String passwd = String.valueOf(passwd1);
+                                String passwd = userSnapshot.child("passwd").getValue(String.class);
+                                String group = userSnapshot.child("group").getValue(String.class);
 
                                 if(strUser.isEmpty()||strPass.isEmpty()) {
                                     Toast.makeText(getApplicationContext(), "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
@@ -93,8 +91,14 @@ public class SignInActivity extends AppCompatActivity {
                                     tv_thongbao.setText("");
                                     Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                                     rememberUser(strUser, strPass, cb_luumk.isChecked());
-                                    Intent intent1 = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(intent1);
+                                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                                    intent.putExtra("user", strUser);
+                                    if (group.equals("admin")){
+                                        intent.putExtra("quyen","admin");
+                                    }else {
+                                        intent.putExtra("quyen", "user");
+                                    }
+                                    startActivity(intent);
                                 }else {
                                     tv_thongbao.setText("Tài khoản hoặc mật khẩu nhập sai!");
                                 }
@@ -114,6 +118,7 @@ public class SignInActivity extends AppCompatActivity {
 
             }
         });
+
 
         tv_quenmk.setOnClickListener(new View.OnClickListener() {
             @Override

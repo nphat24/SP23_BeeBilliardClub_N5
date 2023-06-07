@@ -6,7 +6,7 @@
         android:title="Trang chủ" />
 
     <item
-        android:id="@+id/nav_Qlhoadon"
+        android:id="@+id/nav_Giochoi"
         android:icon="@drawable/clock"
         android:title="Giờ chơi" />
 
