@@ -3,11 +3,12 @@ package mob104.fpoly.myapplication.models;
 import androidx.annotation.NonNull;
 
 public class NhanvienModel {
-    private String name ;
-    private int passwd;
-    private int phonenumber;
+    private String name;
     private String username;
+    private String password;
+    private String birth_date;
     private String group;
+    private double luong;
     private String cccd;
 
     public String getName() {
@@ -18,28 +19,29 @@ public class NhanvienModel {
         this.name = name;
     }
 
-    public int getPasswd() {
-        return passwd;
-    }
-
-    public void setPasswd(int passwd) {
-        this.passwd = passwd;
-    }
-
-    public int getPhonenumber() {
-        return phonenumber;
-    }
-
-    public void setPhonenumber(int phonenumber) {
-        this.phonenumber = phonenumber;
-    }
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getBirth_date() {
+        return birth_date;
+    }
+
+    public void setBirth_date(String birth_date) {
+        this.birth_date = birth_date;
     }
 
     public String getGroup() {
@@ -50,6 +52,14 @@ public class NhanvienModel {
         this.group = group;
     }
 
+    public double getLuong() {
+        return luong;
+    }
+
+    public void setLuong(double luong) {
+        this.luong = luong;
+    }
+
     public String getCccd() {
         return cccd;
     }
@@ -58,38 +68,16 @@ public class NhanvienModel {
         this.cccd = cccd;
     }
 
-    public String getLuong() {
-        return luong;
+    @Override
+    public String toString() {
+        return "NhanvienModel{" +
+                "name='" + name + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", birth_date='" + birth_date + '\'' +
+                ", group='" + group + '\'' +
+                ", luong=" + luong +
+                ", cccd='" + cccd + '\'' +
+                '}';
     }
-
-    public void setLuong(String luong) {
-        this.luong = luong;
-    }
-
-    public String getNgaysinh() {
-        return ngaysinh;
-    }
-
-    public void setNgaysinh(String ngaysinh) {
-        this.ngaysinh = ngaysinh;
-    }
-
-    private String luong;
-    private String ngaysinh;
-
-    public NhanvienModel(String name, int passwd, int phonenumber, String username, String group, String cccd, String luong, String ngaysinh) {
-        this.name = name;
-        this.passwd = passwd;
-        this.phonenumber = phonenumber;
-        this.username = username;
-        this.group = group;
-        this.cccd = cccd;
-        this.luong = luong;
-        this.ngaysinh = ngaysinh;
-    }
-
-    public NhanvienModel() {
-    }
-
-
 }
