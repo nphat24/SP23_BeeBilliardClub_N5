@@ -64,7 +64,7 @@ public class BanchoiAdapter extends BaseAdapter {
     }
 
     private void SaveStartTime(String name, String startTime ){
-        Log.d("xxxx", "SaveStartTime: " + name);
+
         DatabaseReference ref = firebaseDatabase.getReference("Table");
 
         Query query = ref.orderByChild("name").equalTo(name);

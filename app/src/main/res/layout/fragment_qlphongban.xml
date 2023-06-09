@@ -6,24 +6,23 @@
     android:orientation="vertical"
     android:background="#F6FAFD">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcv_quanLyPhongBan"
+    <ListView
+        android:id="@+id/lv_quanLyPhongBan"
         android:layout_width="match_parent"
-        android:layout_height="622dp"
+        android:layout_height="0dp"
         android:layout_weight="1"
         android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+        />
 
-    <Button
-        android:id="@+id/btn_addPhongBan"
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="bottom"
-        android:backgroundTint="@color/white"
-        android:gravity="end"
-        android:isScrollContainer="false"
-        app:icon="@drawable/add"
-        app:iconGravity="end"
-        app:iconSize="40dp"
-        app:iconTint="#006400" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_baseline_add_24"
+        app:backgroundTint="@color/green"
+        app:tint="@android:color/white"
+        app:maxImageSize="48dp"/>
+
 </LinearLayout>
