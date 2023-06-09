@@ -6,17 +6,18 @@
         android:title="Trang chủ" />
 
     <item
-        android:id="@+id/nav_Giochoi"
-        android:icon="@drawable/clock"
-        android:title="Giờ chơi" />
+        android:id="@+id/nav_Qlhoadon"
+        android:icon="@drawable/qlphoadon"
+        android:title="QL.Hóa đơn" />
 
     <item
-        android:id="@+id/nav_Lienhe"
-        android:icon="@drawable/contact"
-        android:title="Liên hệ" />
+        android:id="@+id/nav_QLNV"
+        android:icon="@drawable/file"
+        android:title="QLNV" />
 
     <item
         android:id="@+id/nav_Hoso"
-        android:icon="@drawable/file"
+        android:icon="@drawable/hosoqanly"
         android:title="Hồ sơ" />
+
 </menu>

@@ -11,11 +11,11 @@ import androidx.fragment.app.Fragment;
 
 import mob104.fpoly.myapplication.R;
 
-public class Frag_Quanlyphongban extends Fragment {
+public class QLNhanvienFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_qlphongban,container,false);
+        View view = inflater.inflate(R.layout.fragment_quanlinhanvien,container,false);
 
         return view;
     }
