@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         // đoạn check admin
         Intent intent = getIntent();
         String quyen = intent.getStringExtra("quyen");
+        String user = intent.getStringExtra("user");
         if (quyen.equals("admin")){
             bottomNavigationView.getMenu().clear();
             admin();
