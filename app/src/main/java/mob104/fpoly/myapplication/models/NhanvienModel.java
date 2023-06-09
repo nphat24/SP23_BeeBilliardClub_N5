@@ -7,7 +7,7 @@ public class NhanvienModel {
     private String id;
     private String name;
     private String username;
-    private String password;
+    private String passwd;
     private String birth_date;
     private String group;
     private double luong;
@@ -38,12 +38,12 @@ public class NhanvienModel {
     }
 
 
-    public String getPassword() {
-        return password;
+    public String getPasswd() {
+        return passwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswd(String passwd) {
+        this.passwd = passwd;
     }
 
     public String getBirth_date() {
@@ -83,7 +83,7 @@ public class NhanvienModel {
         return "NhanvienModel{" +
                 "name='" + name + '\'' +
                 ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", password='" + passwd + '\'' +
                 ", birth_date='" + birth_date + '\'' +
                 ", group='" + group + '\'' +
                 ", luong=" + luong +

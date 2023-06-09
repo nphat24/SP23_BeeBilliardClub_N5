@@ -3,4 +3,16 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="list_nv">Quản lý nhân viên</string>
+
+
+<!--    title ad-->
+    <string name="ql_phong_ban_ad">Quản lý Phòng Bàn</string>
+    <string name="ql_nv_ad">Quản lý Nhân viên</string>
+    <string name="ql_bill_ad">Quản lý Hóa Đơn</string>
+    <string name="ql_hs_ad">Hồ sơ</string>
+    <!--    title nv-->
+    <string name="ds_phong_ban_nv">Danh sách phòng bàn</string>
+    <string name="ql_play_time">Quản lý giờ chơi</string>
+    <string name="sp_nv">Liên hệ</string>
+    <string name="ql_hs_nv">Hồ sơ</string>
 </resources>

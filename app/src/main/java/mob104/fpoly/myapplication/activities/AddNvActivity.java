@@ -64,7 +64,7 @@ public class AddNvActivity extends AppCompatActivity {
             NhanvienModel nv = new NhanvienModel();
             nv.setName(strName);
             nv.setUsername(strUserName);
-            nv.setPassword(strPassword);
+            nv.setPasswd(strPassword);
             nv.setBirth_date(strBirth);
             nv.setCccd(strCccd);
             nv.setGroup("user");
