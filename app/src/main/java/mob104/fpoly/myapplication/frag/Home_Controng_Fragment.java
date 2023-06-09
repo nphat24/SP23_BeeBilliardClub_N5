@@ -1,6 +1,7 @@
 package mob104.fpoly.myapplication.frag;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,17 +35,15 @@ public class Home_Controng_Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_controng,container,false);
         FirebaseApp.initializeApp(getContext());
-
+        loadBanchoi(view);
         return view;
     }
 
     @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        loadBanchoi(view);
+    public void onResume() {
+        super.onResume();
+        banchoiAdapter.notifyDataSetChanged();
     }
-
-
 
     private void loadBanchoi(View view){
         DatabaseReference ref = database.getReference();
@@ -61,8 +60,10 @@ public class Home_Controng_Fragment extends Fragment {
 
                 for(DataSnapshot contentDataSnapshot: dataSnapshot.getChildren()){
                     BanchoiModel banchoiModel = contentDataSnapshot.getValue(BanchoiModel.class);
+                    Log.d("xxxx", "onDataChange: " + banchoiModel.getStart().length());
                     if(banchoiModel.getStart().length() < 1){
                         banchoiModels.add(banchoiModel);
+
                     }
 
                 }

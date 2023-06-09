@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -62,11 +63,31 @@ public class BanchoiAdapter extends BaseAdapter {
         TextView tvBanchoi;
     }
 
-    private void SaveStartTime(int position, String startTime ){
-        String path ="Table/" + position;
-        DatabaseReference ref = firebaseDatabase.getReference(path);
+    private void SaveStartTime(String name, String startTime ){
+        Log.d("xxxx", "SaveStartTime: " + name);
+        DatabaseReference ref = firebaseDatabase.getReference("Table");
 
-        ref.child("start").setValue(startTime);
+        Query query = ref.orderByChild("name").equalTo(name);
+
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    // Lấy reference đến bản ghi có trường "name" là "A"
+                    DatabaseReference userRef = userSnapshot.getRef();
+                    Log.d("xxxx", "onDataChange: " + userRef);
+                    // Thực hiện thay đổi trong bản ghi
+
+                    userRef.child("start").setValue(startTime);
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Xử lý khi có lỗi xảy ra
+            }
+        });
     }
 
     @Override
@@ -104,6 +125,10 @@ public class BanchoiAdapter extends BaseAdapter {
                     Intent intent = new Intent(context, Activity_banchoi.class);
                     intent.putExtra("start",dataModels.get(position).getStart());
                     intent.putExtra("price", dataModels.get(position).getPrice());
+                    intent.putExtra("name", dataModels.get(position).getName());
+
+                    intent.putExtra("position", position+"");
+
 
                     context.startActivity(intent);
 
@@ -136,10 +161,14 @@ public class BanchoiAdapter extends BaseAdapter {
                     batdau.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            SaveStartTime(position, currentDateTime);
+                            SaveStartTime(dataModels.get(position).getName(), currentDateTime);
                             Intent intent = new Intent(context, Activity_banchoi.class);
                             intent.putExtra("start",currentDateTime);
                             intent.putExtra("price", dataModels.get(position).getPrice());
+                            intent.putExtra("name", dataModels.get(position).getName());
+
+                            intent.putExtra("position", position+"");
+
                             context.startActivity(intent);
                             alertDialog.dismiss();
                         }

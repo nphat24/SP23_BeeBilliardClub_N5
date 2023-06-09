@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -65,5 +66,9 @@ public class MainActivity extends AppCompatActivity {
     private void replaceFragment(Fragment frg){
         FragmentManager frm = getFragmentManager();
         frm.beginTransaction().replace(R.id.content_frame,frg).commit();
+    }
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Bạn không thể quay lại ở màn hình này", Toast.LENGTH_SHORT).show();
     }
 }
