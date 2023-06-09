@@ -34,17 +34,21 @@ public class Home_Sudung_Fragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.home_sudung,container,false);
         FirebaseApp.initializeApp(getContext());
-
+        loadBanchoi(view);
         return view;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        loadBanchoi(view);
+
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        banchoiAdapter.notifyDataSetChanged();
+    }
 
     private void loadBanchoi(View view){
         DatabaseReference ref = database.getReference();

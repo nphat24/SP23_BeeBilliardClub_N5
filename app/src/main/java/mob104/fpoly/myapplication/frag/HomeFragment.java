@@ -43,6 +43,8 @@ public class HomeFragment extends Fragment {
                }
             }
         }).attach();
+
         return view;
     }
+
 }

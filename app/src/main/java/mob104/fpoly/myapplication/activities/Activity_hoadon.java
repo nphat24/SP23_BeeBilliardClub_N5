@@ -9,9 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import mob104.fpoly.myapplication.R;
 
 public class Activity_hoadon extends AppCompatActivity {
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,8 @@ public class Activity_hoadon extends AppCompatActivity {
         String giatien = intent.getStringExtra("giatien");
         String giochoi = intent.getStringExtra("giochoi");
         String tongtien = intent.getStringExtra("tongtien");
+        String position = intent.getStringExtra("position");
+        String name = intent.getStringExtra("name");
 
         tv_tongtien.setText(tongtien);
         tv_khachcantra.setText(tongtien);
@@ -35,12 +41,22 @@ public class Activity_hoadon extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                String path ="Table/" + position;
+                DatabaseReference ref = database.getReference(path);
+                ref.child("start").setValue("");
+                ref.child("end").setValue("");
+
+
+
                 Intent intent = new Intent(Activity_hoadon.this,Activity_hoadonchitiet.class);
                 intent.putExtra("tonggio", tonggio);
                 intent.putExtra("giatien", giatien);
                 intent.putExtra("giochoi", giochoi);
                 intent.putExtra("tongtien", tongtien);
+                intent.putExtra("position",position);
                 startActivity(intent);
+                finish();
             }
         });
 

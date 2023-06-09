@@ -13,6 +13,20 @@ public class NhanvienModel {
     private double luong;
     private String cccd;
 
+    public NhanvienModel(String id, String name, String username, String password, String birth_date, String group, double luong, String cccd) {
+        this.id = id;
+        this.name = name;
+        this.username = username;
+        this.password = password;
+        this.birth_date = birth_date;
+        this.group = group;
+        this.luong = luong;
+        this.cccd = cccd;
+    }
+
+    public NhanvienModel() {
+    }
+
     public String getId() {
         return id;
     }

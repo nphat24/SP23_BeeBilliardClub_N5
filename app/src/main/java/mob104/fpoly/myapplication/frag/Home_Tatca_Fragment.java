@@ -45,6 +45,12 @@ public class Home_Tatca_Fragment extends Fragment {
         loadBanchoi(view);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        banchoiAdapter.notifyDataSetChanged();
+    }
+
 
 
     private void loadBanchoi(View view){

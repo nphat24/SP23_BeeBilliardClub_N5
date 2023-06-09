@@ -81,7 +81,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:textColor="@color/black"
                 android:background="@drawable/bg_botron"
                 android:layout_marginLeft="10dp"
@@ -105,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:textColor="@color/black"
                 android:background="@drawable/bg_botron"
                 android:layout_marginLeft="10dp"
@@ -126,7 +126,7 @@
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="10dp"
@@ -162,7 +162,7 @@
                 />
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="10dp"

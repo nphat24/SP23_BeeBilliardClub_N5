@@ -34,6 +34,8 @@ public class Activity_hoadon_nhanvien extends AppCompatActivity {
         String stringStartTime = intent.getStringExtra("start");
         String stringEndTime = intent.getStringExtra("end");
         String price = intent.getStringExtra("price");
+        String position = intent.getStringExtra("position");
+        String name = intent.getStringExtra("name");
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -83,6 +85,8 @@ public class Activity_hoadon_nhanvien extends AppCompatActivity {
                 intent.putExtra("giatien", tv_price.getText());
                 intent.putExtra("giochoi", tv_giochoi.getText());
                 intent.putExtra("tongtien", tv_total_money.getText());
+                intent.putExtra("position",position);
+                intent.putExtra("name",name);
                 startActivity(intent);
 
             }
