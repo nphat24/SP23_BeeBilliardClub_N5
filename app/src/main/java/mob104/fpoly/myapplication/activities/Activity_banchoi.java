@@ -57,6 +57,9 @@ public class Activity_banchoi extends AppCompatActivity {
         Intent intent = getIntent();
         String stringStartTime = intent.getStringExtra("start");
         String price = intent.getStringExtra("price");
+        String position = intent.getStringExtra("position");
+        String name = intent.getStringExtra("name");
+
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
@@ -98,6 +101,9 @@ public class Activity_banchoi extends AppCompatActivity {
                 intent1.putExtra("start", stringStartTime);
                 intent1.putExtra("end",currentDateTime);
                 intent1.putExtra("price", price);
+                intent1.putExtra("position", position);
+                intent1.putExtra("name", name);
+
                 startActivity(intent1);
 
             }
