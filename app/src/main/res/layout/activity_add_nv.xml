@@ -63,7 +63,8 @@
                 android:background="@drawable/bg_botron"
                 android:inputType="text"
                 android:paddingLeft="18dp"
-                android:text="adminquanly"
+                android:hint="họ và tên"
+                android:text=""
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
@@ -87,7 +88,7 @@
                 android:background="@drawable/bg_botron"
                 android:inputType="text"
                 android:paddingLeft="18dp"
-                android:text="adminquanly"
+                android:hint="tài khoản"
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
@@ -104,14 +105,14 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
             <EditText
-                android:id="@+id/ed_DN_password"
+                android:id="@+id/ed_password_nv"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginRight="20dp"
                 android:background="@drawable/bg_botron"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:paddingLeft="18dp"
-                android:text="adminquanly"
+                android:hint="mật khẩu"
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
@@ -135,17 +136,32 @@
                 android:background="@drawable/bg_botron"
                 android:inputType="textPassword"
                 android:paddingLeft="18dp"
-                android:text="adminquanly"
+                android:hint="xác nhận mật khẩu"
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
-            android:layout_marginVertical="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="10dp"
-            android:orientation="horizontal">
-
-
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="10dp">
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Ngày sinh"
+                android:textColor="@color/green"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <EditText
+                android:id="@+id/ed_birth_date"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/bg_botron"
+                android:inputType="text"
+                android:paddingLeft="18dp"
+                android:hint="Ngày sinh"
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginVertical="10dp"
@@ -157,7 +173,7 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Ngày sinh"
+                android:text="Cccd"
                 android:textColor="@color/green"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -169,7 +185,7 @@
                 android:background="@drawable/bg_botron"
                 android:inputType="text"
                 android:paddingLeft="18dp"
-                android:text="adminquanly"
+                android:hint="số căn cước"
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
@@ -178,10 +194,11 @@
             android:layout_height="wrap_content"
             android:paddingHorizontal="10dp"
             android:orientation="horizontal">
+
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:text="Ngày sinh"
+                android:text="Lương /h"
                 android:textColor="@color/green"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -193,7 +210,8 @@
                 android:background="@drawable/bg_botron"
                 android:inputType="number"
                 android:paddingLeft="18dp"
-                android:text="50000"
+                android:text=""
+                android:hint="Lương cơ bản"
                 android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
