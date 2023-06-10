@@ -65,6 +65,7 @@ public class QLPhongbanAdapter extends BaseAdapter {
         }
 
         viewOfItem.tv_tien.setText(dataModels.get(position).getPrice() + " đ");
+        viewOfItem.tv_idban.setText("ID: " + position+"");
 
         if(dataModels.get(position).getStart().length() != 0 ){
             viewOfItem.tv_soban.setText(dataModels.get(position).getName() + " Billiard");

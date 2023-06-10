@@ -55,6 +55,8 @@ public class Activity_hoadon extends AppCompatActivity {
                 intent.putExtra("giochoi", giochoi);
                 intent.putExtra("tongtien", tongtien);
                 intent.putExtra("position",position);
+                intent.putExtra("name",name);
+                intent.putExtra("check","save");
                 startActivity(intent);
                 finish();
             }
