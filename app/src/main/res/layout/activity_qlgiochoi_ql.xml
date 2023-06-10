@@ -86,7 +86,6 @@
                     android:layout_width="100dp"
                     android:layout_height="75dp"
                     android:layout_marginLeft="10dp"
-                    android:text="Thời gian   Từ:"
                     android:textColor="@color/black"
                     android:textSize="18dp" />
                 <LinearLayout
@@ -96,18 +95,7 @@
                     android:layout_marginLeft="150dp"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btn_batdau_qlgiochoi_ql"
-                        android:layout_width="130dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#D9D9D9 "
-                        android:text="Bắt đầu"
-                        android:textColor="@color/black"
-                        app:icon="@drawable/batdau"
-                        app:iconGravity="start"
-                        app:iconPadding="5dp"
-                        app:iconSize="20dp"
-                        app:iconTint="#00CC00 " />
+
                     <Button
                         android:id="@+id/btn_dung_qlgiochoi_ql"
                         android:layout_width="130dp"

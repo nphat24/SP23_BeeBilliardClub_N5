@@ -16,6 +16,7 @@ public class BanchoiModel {
         Price = price;
     }
 
+
     public String getName() {
         return Name;
     }

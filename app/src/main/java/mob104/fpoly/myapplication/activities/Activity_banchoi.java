@@ -10,8 +10,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -51,14 +55,18 @@ public class Activity_banchoi extends AppCompatActivity {
         setContentView(R.layout.activity_qlgiochoi_ql);
         TextView textView = findViewById(R.id.tv_batdauchoi_qlgiochoi_ql);
         TextView textView2 = findViewById(R.id.tv_thoigianchoi_qlgiochoi_ql);
+        TextView tv_tieude = findViewById(R.id.tv_ban_qlgiochoi_ql);
         Button btnHuy = findViewById(R.id.btn_Cancel_qlgiochoi_ql);
         Button btnHoantat = findViewById(R.id.btn_hoantat_qlgiochoi_ql);
+        Button btnDung = findViewById(R.id.btn_dung_qlgiochoi_ql);
 
         Intent intent = getIntent();
         String stringStartTime = intent.getStringExtra("start");
         String price = intent.getStringExtra("price");
         String position = intent.getStringExtra("position");
         String name = intent.getStringExtra("name");
+
+        tv_tieude.setText(name + "- Billiard");
 
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -106,6 +114,32 @@ public class Activity_banchoi extends AppCompatActivity {
 
                 startActivity(intent1);
 
+            }
+        });
+
+        btnDung.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference ref = firebaseDatabase.getReference("Table");
+
+                Query query = ref.orderByChild("name").equalTo(name);
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                            // Lấy reference đến bản ghi có trường "name" là "A"
+                            DatabaseReference userRef = userSnapshot.getRef();
+                            userRef.child("start").setValue("");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Xử lý khi có lỗi xảy ra
+                    }
+                });
             }
         });
     }
