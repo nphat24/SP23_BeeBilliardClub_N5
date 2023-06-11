@@ -17,7 +17,7 @@ public class NhanvienModel {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.password = password;
+        this.passwd = password;
         this.birth_date = birth_date;
         this.group = group;
         this.luong = luong;
