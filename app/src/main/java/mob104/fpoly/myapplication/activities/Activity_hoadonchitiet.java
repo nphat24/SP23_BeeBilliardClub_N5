@@ -35,6 +35,9 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
         TextView tv_tongtienhang = findViewById(R.id.tv_tongtienhang);
         TextView tv_tongcong = findViewById(R.id.tv_tongcong);
         TextView tv_close = findViewById(R.id.tv_close);
+        TextView tv_name = findViewById(R.id.tv_name);
+        TextView tv_giovao =findViewById(R.id.tv_giovao);
+        TextView tv_giora =findViewById(R.id.tv_giora);
 
         Intent intent = getIntent();
         String tonggio = intent.getStringExtra("tonggio");
@@ -42,7 +45,16 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
         String giochoi = intent.getStringExtra("giochoi");
         String tongtien = intent.getStringExtra("tongtien");
         String name = intent.getStringExtra("name");
+        String check = intent.getStringExtra("check");
 
+        int viTriDen = tonggio.indexOf("đến");
+
+
+        String phanTruoc = tonggio.substring(2, viTriDen).trim();
+        tv_giovao.setText("Giờ vào: " + phanTruoc);
+
+        String phanSau = tonggio.substring(viTriDen + 3, tonggio.indexOf("(")).trim();
+        tv_giora.setText("Giờ ra: " + phanSau);
 
         Calendar calendar = Calendar.getInstance();
         Date currentDate = calendar.getTime();
@@ -50,11 +62,12 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         String dateString = dateFormat.format(currentDate);
+        if (check.equals("save")){
+            HoadonModel hoadonModel = new HoadonModel(dateString,giatien,tonggio,name,giochoi,tongtien,"staff");
+            ref.push().setValue(hoadonModel);
+        }
 
-        HoadonModel hoadonModel = new HoadonModel(dateString,name,giochoi,tongtien,"staff");
-        ref.push().setValue(hoadonModel);
-
-
+        tv_name.setText(name);
         tv_tenhang.setText(tonggio);
         tv_dongia.setText(giatien);
         tv_soluong.setText(giochoi);

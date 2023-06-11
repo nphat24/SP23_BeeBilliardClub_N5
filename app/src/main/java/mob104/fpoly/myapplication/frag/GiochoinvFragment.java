@@ -38,7 +38,7 @@ public class GiochoinvFragment extends Fragment {
     }
     private void loadBanchoi(View view) {
         DatabaseReference ref = database.getReference();
-        listView = view.findViewById(R.id.lv_banchoi);
+        listView = view.findViewById(R.id.lv_qlhoadon);
 
         giochoiAdapter = new GiochoiAdapter(getContext(), banchoiModels);
         listView.setAdapter(giochoiAdapter);
