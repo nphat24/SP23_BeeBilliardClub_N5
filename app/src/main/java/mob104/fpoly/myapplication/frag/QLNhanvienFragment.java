@@ -1,5 +1,6 @@
 package mob104.fpoly.myapplication.frag;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mob104.fpoly.myapplication.R;
+import mob104.fpoly.myapplication.activities.AddNvActivity;
 import mob104.fpoly.myapplication.adapter.UserAdapter;
 import mob104.fpoly.myapplication.models.NhanvienModel;
 
@@ -30,15 +33,28 @@ public class QLNhanvienFragment extends Fragment {
     ArrayList<NhanvienModel> list = new ArrayList<NhanvienModel>();
     UserAdapter adapter;
     ListView listView;
+    FloatingActionButton floatingActionButton;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_quanlinhanvien,container,false);
         listView = view.findViewById(R.id.list_user_nv);
+            showListUser();
+
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
+
+        floatingActionButton.setOnClickListener(v->{
+            Intent intent = new Intent(getContext(), AddNvActivity.class);
+            startActivity(intent);
+        });
+
+        return view;
+    }
+
+
+    private void showListUser(){
         list.clear();
-
-
         userReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -94,8 +110,11 @@ public class QLNhanvienFragment extends Fragment {
                 // Xử lý lỗi nếu cần
             }
         });
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
 
 
-        return view;
     }
 }

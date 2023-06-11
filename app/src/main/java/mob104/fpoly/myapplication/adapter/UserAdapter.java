@@ -1,17 +1,21 @@
 package mob104.fpoly.myapplication.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
 import java.util.List;
 
 import mob104.fpoly.myapplication.R;
+import mob104.fpoly.myapplication.activities.UpdateNvActivity;
 import mob104.fpoly.myapplication.models.NhanvienModel;
 
 public class UserAdapter extends BaseAdapter {
@@ -59,6 +63,18 @@ public class UserAdapter extends BaseAdapter {
         tvCccd.setText(nv.getCccd());
         tvLuong.setText(nv.getLuong()+"");
 
+        itemView.findViewById(R.id.btn_edit).setOnClickListener(v->{
+            Toast.makeText(context, nv.getId()+"", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(context, UpdateNvActivity.class);
+            intent.putExtra("key", nv.getId());
+            context.startActivity(intent);
+        });
+
+
+
+        itemView.setOnClickListener(v -> {
+            Toast.makeText(context, "Bạn vừa click vào item", Toast.LENGTH_SHORT).show();
+        });
         return itemView;
     }
 }

@@ -3,21 +3,21 @@ package mob104.fpoly.myapplication.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import mob104.fpoly.myapplication.R;
 import mob104.fpoly.myapplication.models.NhanvienModel;
-import mob104.fpoly.myapplication.models.User;
 
 public class AddNvActivity extends AppCompatActivity {
     DatabaseReference userReference = FirebaseDatabase.getInstance().getReference().child("User");
@@ -30,12 +30,17 @@ public class AddNvActivity extends AppCompatActivity {
     EditText ed_luong;
     Button btn_add;
 
+    MaterialToolbar toolbar;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_nv);
+
+        toolbar = findViewById(R.id.materialToolbar);
+
         ed_name = findViewById(R.id.ed_full_name);
         ed_username = findViewById(R.id.ed_account);
         ed_password = findViewById(R.id.ed_password_nv);
@@ -44,7 +49,7 @@ public class AddNvActivity extends AppCompatActivity {
         ed_cccd = findViewById(R.id.ed_cccd);
         ed_luong = findViewById(R.id.ed_luong);
 //        btn
-        btn_add = findViewById(R.id.btn_add);
+        btn_add = findViewById(R.id.btn_save);
         // string
         btn_add.setOnClickListener(view ->{
             String strName = ed_name.getText().toString().trim();
@@ -75,7 +80,15 @@ public class AddNvActivity extends AppCompatActivity {
 
         });
 
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+
     }
+
 
     private void checkNull(String str){
         if (str == null || str.length() == 0 || str.equals("")){
@@ -94,7 +107,7 @@ public class AddNvActivity extends AppCompatActivity {
                     // Thêm thành công
                     Log.d("User", "User added successfully");
                     Toast.makeText(AddNvActivity.this, "Thêm thành công", Toast.LENGTH_SHORT).show();
-
+                    finish();
                 } else {
                     // Xử lý lỗi
                     Log.e("User", "Failed to add user: " + task.getException().getMessage());
