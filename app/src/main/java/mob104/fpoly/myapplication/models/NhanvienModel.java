@@ -9,19 +9,29 @@ public class NhanvienModel {
     private String username;
     private String passwd;
     private String birth_date;
+    private String phone_number;
     private String group;
     private double luong;
     private String cccd;
 
-    public NhanvienModel(String id, String name, String username, String password, String birth_date, String group, double luong, String cccd) {
+    public NhanvienModel(String id, String name, String username, String passwd, String birth_date, String phone_number, String group, double luong, String cccd) {
         this.id = id;
         this.name = name;
         this.username = username;
-        this.passwd = password;
+        this.passwd = passwd;
         this.birth_date = birth_date;
+        this.phone_number = phone_number;
         this.group = group;
         this.luong = luong;
         this.cccd = cccd;
+    }
+
+    public String getPhone_number() {
+        return phone_number;
+    }
+
+    public void setPhone_number(String phone_number) {
+        this.phone_number = phone_number;
     }
 
     public NhanvienModel() {
@@ -95,10 +105,12 @@ public class NhanvienModel {
     @Override
     public String toString() {
         return "NhanvienModel{" +
-                "name='" + name + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 ", username='" + username + '\'' +
-                ", password='" + passwd + '\'' +
+                ", passwd='" + passwd + '\'' +
                 ", birth_date='" + birth_date + '\'' +
+                ", phone_number='" + phone_number + '\'' +
                 ", group='" + group + '\'' +
                 ", luong=" + luong +
                 ", cccd='" + cccd + '\'' +

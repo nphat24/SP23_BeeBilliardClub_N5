@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:orientation="horizontal">\
+        android:orientation="horizontal">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
@@ -28,7 +28,7 @@
                 android:text="Họ tên: Nguyễn Văn A"
                 android:layout_marginLeft="15dp"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/tv_trangthai_nhanvien"
@@ -37,7 +37,7 @@
                 android:text="Trạng thái: Đang làm việc"
                 android:layout_marginLeft="15dp"
                 android:textColor="#E41E1E"
-                android:textSize="20dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -55,7 +55,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:orientation="horizontal">
 
@@ -67,13 +67,15 @@
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_taikhoan_hsnv"
+        <TextView
+            android:id="@+id/tv_taikhoan_hsnv"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
+            android:paddingTop="13dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
+            android:textSize="18sp"
             android:text="anv123"
             android:inputType="text"
             android:paddingLeft="18dp"
@@ -95,13 +97,15 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold" />
-        <EditText
-            android:id="@+id/ed_sogiolam_hsnv"
+        <TextView
+            android:id="@+id/tv_sogiolam_hsnv"
             android:layout_width="match_parent"
             android:layout_marginRight="20dp"
+            android:paddingTop="13dp"
             android:layout_height="50dp"
             android:textColor="@color/black"
             android:background="@drawable/bg_botron"
+            android:textSize="18sp"
             android:text="1h"
             android:inputType="text"
             android:paddingLeft="18dp"
@@ -119,6 +123,23 @@
             android:layout_height="50dp"
             android:background="@drawable/bg_btn_sign_in"
             android:text="Đổi mật khẩu"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_gravity="center">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dangxuat_hsnv"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_btn_sign_in"
+            android:text="Đăng xuất"
             android:textColor="@color/white"
             android:textSize="18sp"
 

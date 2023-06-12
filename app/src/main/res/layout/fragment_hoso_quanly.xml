@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="10dp"
-        android:orientation="horizontal">\
+        android:orientation="horizontal">
         <ImageView
             android:layout_width="100dp"
             android:layout_height="140dp"
@@ -29,7 +29,7 @@
                 android:text="Họ tên: Nguyễn Quản Lý"
                 android:layout_marginLeft="15dp"
                 android:textColor="@color/black"
-                android:textSize="25dp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
             <TextView
                 android:id="@+id/tv_trangthai_hsql"
@@ -38,7 +38,7 @@
                 android:text="Trạng thái: Đang làm việc"
                 android:layout_marginLeft="15dp"
                 android:textColor="#E41E1E"
-                android:textSize="20dp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -56,7 +56,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:orientation="horizontal">
 
@@ -85,7 +85,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:orientation="horizontal">
 
@@ -114,7 +114,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:gravity="center"
         android:orientation="horizontal">
@@ -145,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:paddingTop="30dp"
+        android:paddingTop="10dp"
         android:layout_gravity="center">
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_doimatkhau_hsql"
@@ -157,5 +157,22 @@
         android:textSize="18sp"
 
         />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="10dp"
+        android:layout_gravity="center">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_dangxuat_hsql"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:background="@drawable/bg_btn_sign_in"
+            android:text="Đăng xuất"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+
+            />
     </LinearLayout>
 </LinearLayout>

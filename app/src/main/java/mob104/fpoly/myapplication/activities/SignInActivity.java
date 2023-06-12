@@ -88,7 +88,7 @@ public class SignInActivity extends AppCompatActivity {
                                     Toast.makeText(getApplicationContext(), "Vui lòng nhập đầy đủ thông tin!", Toast.LENGTH_SHORT).show();
                                 }
                                 if (strUser.equals(username) && strPass.equals(passwd)){
-                                    tv_thongbao.setText("");
+
                                     Toast.makeText(getApplicationContext(), "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
                                     rememberUser(strUser, strPass, cb_luumk.isChecked());
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
@@ -99,6 +99,7 @@ public class SignInActivity extends AppCompatActivity {
                                         intent.putExtra("quyen", "user");
                                     }
                                     startActivity(intent);
+                                    tv_thongbao.setText("");
                                 }else {
                                     tv_thongbao.setText("Tài khoản hoặc mật khẩu nhập sai!");
                                 }

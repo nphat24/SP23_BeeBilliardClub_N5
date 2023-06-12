@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class Activity_quenmatkhau extends AppCompatActivity {
     Button btn_thaydmk_quenmk;
     TextInputLayout ed_password_quenmk;
     TextView tv_tb_qmk;
-
+    String cccd , username , passwd , passl2;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference userReference = database.getReference().child("User");
 
@@ -57,16 +58,15 @@ public class Activity_quenmatkhau extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String cccd = ed_cccd_quenmk.getText().toString().trim();
-                String username = ed_user_name_quenmk.getText().toString().trim();
-                String passwd = ed_password_quenmk.getEditText().toString().trim();
-                String passl2 = ed_xacnhanmk_quenmk.getText().toString().trim();
+                cccd = ed_cccd_quenmk.getText().toString().trim();
+                username = ed_user_name_quenmk.getText().toString().trim();
+                passwd = ed_password_quenmk.getEditText().getText().toString().trim();
+                passl2 = ed_xacnhanmk_quenmk.getText().toString().trim();
 
                 if (cccd.isEmpty() || username.isEmpty() || passwd.isEmpty() || passl2.isEmpty()) {
                     Toast.makeText(Activity_quenmatkhau.this, "Vui lòng điền đủ thông tin !", Toast.LENGTH_SHORT).show();
                 } else {
                     if (passwd.equals(passl2)) {
-
                         userReference.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -78,12 +78,27 @@ public class Activity_quenmatkhau extends AppCompatActivity {
                                         // thuộc tính userName của user trong child là tên cột getva là kiểu dữ liệu
                                         String username1 = userSnapshot.child("username").getValue(String.class);
                                         String cccd1 = userSnapshot.child("cccd").getValue(String.class);
-
+                                        Query query = userReference.orderByChild("username").equalTo(username1);
                                         if (username.equals(username1) && cccd.equals(cccd1)) {
                                             tv_tb_qmk.setText("");
-                                            String path = "Table/";
-                                            DatabaseReference ref = database.getReference(path);
-                                            ref.child("passwd").setValue(passwd);
+                                            query.addListenerForSingleValueEvent(new ValueEventListener() {
+                                                @Override
+                                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                                    for (DataSnapshot userSnapshot1 : snapshot.getChildren()) {
+                                                        DatabaseReference userRef = userSnapshot1.getRef();
+                                                        Log.d("xxxx", "onDataChange: " + userRef);
+                                                        // Thực hiện thay đổi trong bản ghi
+
+                                                        userRef.child("passwd").setValue(passwd);
+                                                    }
+                                                }
+
+                                                @Override
+                                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                                }
+                                            });
+                                            Toast.makeText(Activity_quenmatkhau.this, "Đổi mật khẩu thành công !", Toast.LENGTH_SHORT).show();
                                             Intent intent = new Intent(Activity_quenmatkhau.this, SignInActivity.class);
                                             startActivity(intent);
                                         } else {
@@ -102,11 +117,9 @@ public class Activity_quenmatkhau extends AppCompatActivity {
                                 // Xử lý lỗi nếu cần
                             }
                         });
-                    } else {
+                    }else{
                         Toast.makeText(Activity_quenmatkhau.this, "Mật khẩu xác nhận không chính xác !", Toast.LENGTH_SHORT).show();
                     }
-
-
                 }
             }
         });

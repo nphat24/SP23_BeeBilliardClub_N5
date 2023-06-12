@@ -9,6 +9,7 @@ import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     QLNhanvienFragment qlNhanvienFragment = new QLNhanvienFragment();
     GiochoinvFragment giochoinvFragment = new GiochoinvFragment();
     Toolbar toolbar;
-    boolean isAdmin = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,14 +45,20 @@ public class MainActivity extends AppCompatActivity {
         // đoạn check admin
         Intent intent = getIntent();
         String quyen = intent.getStringExtra("quyen");
-        if (quyen.equals("admin")){
-            bottomNavigationView.getMenu().clear();
-            admin();
-        }else {
-            bottomNavigationView.getMenu().clear();
-            user();
-        }
-
+        String username = intent.getStringExtra("user");
+            if (quyen.equals("admin")) {
+                bottomNavigationView.getMenu().clear();
+                admin();
+                Bundle bundle = new Bundle();
+                bundle.putString("admin", username);
+                hosoQuanliFragment.setArguments(bundle);
+            } else {
+                bottomNavigationView.getMenu().clear();
+                user();
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("username", username);
+                hosoNhanvienFragment.setArguments(bundle1);
+            }
     }
     private void admin(){
 

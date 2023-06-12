@@ -35,7 +35,6 @@
             <ImageView
                 android:layout_width="100dp"
                 android:layout_height="140dp"
-                android:layout_marginLeft="5dp"
                 android:src="@drawable/nhanvien"
                 />
             <LinearLayout
@@ -79,7 +78,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/bg_botron"
@@ -116,7 +114,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/bg_botron"
@@ -152,7 +149,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/bg_botron"
@@ -177,7 +173,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="15dp"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton

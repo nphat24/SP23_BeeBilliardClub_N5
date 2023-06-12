@@ -19,9 +19,11 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import mob104.fpoly.myapplication.MainActivity;
+import mob104.fpoly.myapplication.MainManhinhcho;
 import mob104.fpoly.myapplication.R;
 import mob104.fpoly.myapplication.activities.Activity_doimatkhau_nhanvien;
 import mob104.fpoly.myapplication.activities.Activity_thongtinnhanvien;
@@ -37,24 +39,31 @@ public class HosoNhanvienFragment extends Fragment {
 
         TextView tv_thongtinnhanvien = view.findViewById(R.id.tv_thongtinnhanvien);
         TextView tv_trangthai_nhanvien = view.findViewById(R.id.tv_trangthai_nhanvien);
-        EditText ed_taikhoan_hsnv = view.findViewById(R.id.ed_taikhoan_hsnv);
-        EditText ed_sogiolam_hsnv = view.findViewById(R.id.ed_sogiolam_hsnv);
+        TextView tv_taikhoan_hsnv = view.findViewById(R.id.tv_taikhoan_hsnv);
+        TextView tv_sogiolam_hsnv = view.findViewById(R.id.tv_sogiolam_hsnv);
         Button btn_doimatkhau_hsnv = view.findViewById(R.id.btn_doimatkhau_hsnv);
+        Button btn_dangxuat_hsnv = view.findViewById(R.id.btn_dangxuat_hsnv);
+
+        String username = getArguments().getString("username");
+
 
         nhanvienReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-                    Log.d("User", " Dữ liệu tồn tại trong bảng User");
-                    for (DataSnapshot userSnapshot: snapshot.getChildren()) {
 
-                        String name = userSnapshot.child("name").getValue(String.class);
+                    for (DataSnapshot userSnapshot : snapshot.getChildren()) {
 
+                        String username1 = userSnapshot.child("username").getValue(String.class);
+
+                        if (username.equals(username1)){
+                            String name = userSnapshot.child("name").getValue(String.class);
+                            tv_thongtinnhanvien.setText("Họ tên: " + name);
+                            tv_trangthai_nhanvien.setText("Trạng thái: Đang làm việc");
+                            tv_taikhoan_hsnv.setText(username1);
+                        }
 
                     }
-                } else {
-                    // Không có dữ liệu trong bảng "User"
-                    Log.d("User", "Không có dữ liệu trong bảng User");
                 }
             }
 
@@ -70,6 +79,7 @@ public class HosoNhanvienFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), Activity_thongtinnhanvien.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });
@@ -77,10 +87,17 @@ public class HosoNhanvienFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getContext(), Activity_doimatkhau_nhanvien.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
             }
         });
-
+        btn_dangxuat_hsnv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(), MainManhinhcho.class);
+                startActivity(intent);
+            }
+        });
         return view;
     }
 }
