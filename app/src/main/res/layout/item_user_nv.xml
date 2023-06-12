@@ -129,7 +129,16 @@
             android:layout_height="30sp"
             android:padding="2dp"
             android:layout_gravity="center_vertical"
-            android:src="@drawable/edit"/>
+            android:src="@drawable/edit"
+            />
+            <ImageView
+                android:id="@+id/btn_del"
+                android:layout_width="30sp"
+                android:layout_height="30sp"
+                android:padding="2dp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/delete"
+                />
         </LinearLayout>
 
     </LinearLayout>
