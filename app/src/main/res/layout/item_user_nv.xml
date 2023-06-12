@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:src="@drawable/nhanvien"/>
+        android:src="@drawable/nhanvien1"/>
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="horizontal"
