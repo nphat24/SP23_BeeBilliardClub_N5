@@ -71,15 +71,17 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:text="Tổng hoá đơn đã thanh toán:"/>
+
         <TextView
+            android:id="@+id/tv_count_bill"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="1 hoá đơn"
             android:textAlignment="center"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:text="1 hoá đơn"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
@@ -123,15 +125,17 @@
             android:textColor="@color/black"
             android:textSize="20dp"
             android:text="Bàn đang sử dụng:"/>
+
         <TextView
+            android:id="@+id/tv_count_table"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="1/10"
             android:textAlignment="center"
-            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="20dp"
-            android:text="1/10"/>
+            android:textStyle="bold" />
     </LinearLayout>
 
     <LinearLayout
