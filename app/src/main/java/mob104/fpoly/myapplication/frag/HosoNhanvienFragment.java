@@ -22,6 +22,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 import mob104.fpoly.myapplication.MainActivity;
 import mob104.fpoly.myapplication.MainManhinhcho;
 import mob104.fpoly.myapplication.R;
@@ -45,6 +49,7 @@ public class HosoNhanvienFragment extends Fragment {
         Button btn_dangxuat_hsnv = view.findViewById(R.id.btn_dangxuat_hsnv);
 
         String username = getArguments().getString("username");
+        String stringStartTime = getArguments().getString("start");
 
 
         nhanvienReference.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -73,7 +78,21 @@ public class HosoNhanvienFragment extends Fragment {
             }
         });
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date startTime = dateFormat.parse(stringStartTime);
+            Date endDate = new Date(); // Lấy thời điểm hiện tại
+            long duration = endDate.getTime() - startTime.getTime();
+            long hours = duration / (60 * 60 * 1000);
+            long minutes = (duration % (60 * 60 * 1000)) / (60 * 1000);
+             long seconds = (duration % (60 * 1000)) / 1000;
+            tv_sogiolam_hsnv.setText(hours + " giờ " + minutes +" phút " + seconds + " giây");
 
+        } catch (ParseException e) {
+            e.printStackTrace();
+            // Xử lý ngoại lệ ở đây
+            // aaa
+        }
 
         tv_thongtinnhanvien.setOnClickListener(new View.OnClickListener() {
             @Override

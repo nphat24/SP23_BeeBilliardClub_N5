@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +18,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import mob104.fpoly.myapplication.MainManhinhcho;
 import mob104.fpoly.myapplication.R;
@@ -39,6 +44,7 @@ public class HosoQuanliFragment extends Fragment {
         Button btn_dangxuat_hsql = view.findViewById(R.id.btn_dangxuat_hsql);
 
         String username = getArguments().getString("admin");
+        String stringStartTime = getArguments().getString("start");
 
         quanlyReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -68,6 +74,21 @@ public class HosoQuanliFragment extends Fragment {
             }
         });
 
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date startTime = dateFormat.parse(stringStartTime);
+            Date endDate = new Date(); // Lấy thời điểm hiện tại
+            long duration = endDate.getTime() - startTime.getTime();
+            long hours = duration / (60 * 60 * 1000);
+            long minutes = (duration % (60 * 60 * 1000)) / (60 * 1000);
+            long seconds = (duration % (60 * 1000)) / 1000;
+            tv_sogiolam_hsql.setText(hours + " giờ " + minutes +" phút " + seconds + " giây");
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+            // Xử lý ngoại lệ ở đây
+            // aaa
+        }
         btn_doimatkhau_hsql.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

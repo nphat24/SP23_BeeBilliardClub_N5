@@ -27,7 +27,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import mob104.fpoly.myapplication.MainActivity;
 import mob104.fpoly.myapplication.R;
@@ -70,6 +74,9 @@ public class SignInActivity extends AppCompatActivity {
             public void onClick(View view) {
                 strUser = ed_DN_username.getText().toString().trim();
                 strPass = ed_DN_password.getEditText().getText().toString().trim();
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+                String start = format.format(c.getTime());
                 // select user firebase
                 userReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -93,6 +100,7 @@ public class SignInActivity extends AppCompatActivity {
                                     rememberUser(strUser, strPass, cb_luumk.isChecked());
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     intent.putExtra("user", strUser);
+                                    intent.putExtra("start", start);
                                     SharedPreferences pref = getSharedPreferences("QUYEN",MODE_PRIVATE);
                                     SharedPreferences.Editor editor = pref.edit();
                                     if (group.equals("admin")){

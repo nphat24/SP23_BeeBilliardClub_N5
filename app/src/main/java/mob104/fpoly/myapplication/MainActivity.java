@@ -46,17 +46,20 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = getIntent();
         String quyen = intent.getStringExtra("quyen");
         String username = intent.getStringExtra("user");
+        String start = intent.getStringExtra("start");
             if (quyen.equals("admin")) {
                 bottomNavigationView.getMenu().clear();
                 admin();
                 Bundle bundle = new Bundle();
                 bundle.putString("admin", username);
+                bundle.putString("start", start);
                 hosoQuanliFragment.setArguments(bundle);
             } else {
                 bottomNavigationView.getMenu().clear();
                 user();
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("username", username);
+                bundle1.putString("start", start);
                 hosoNhanvienFragment.setArguments(bundle1);
             }
     }
@@ -125,7 +128,10 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-
+    @Override
+    public void onBackPressed() {
+        Toast.makeText(this, "Bạn không thể quay lại ở màn hình này", Toast.LENGTH_SHORT).show();
+    }
 
 
 
