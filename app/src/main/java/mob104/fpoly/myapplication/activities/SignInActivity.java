@@ -93,10 +93,16 @@ public class SignInActivity extends AppCompatActivity {
                                     rememberUser(strUser, strPass, cb_luumk.isChecked());
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     intent.putExtra("user", strUser);
+                                    SharedPreferences pref = getSharedPreferences("QUYEN",MODE_PRIVATE);
+                                    SharedPreferences.Editor editor = pref.edit();
                                     if (group.equals("admin")){
                                         intent.putExtra("quyen","admin");
+                                        editor.putString("quyen","admin");
+                                        editor.commit();
                                     }else {
                                         intent.putExtra("quyen", "user");
+                                        editor.putString("quyen","user");
+                                        editor.commit();
                                     }
                                     startActivity(intent);
                                     tv_thongbao.setText("");

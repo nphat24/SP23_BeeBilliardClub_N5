@@ -2,8 +2,11 @@ package mob104.fpoly.myapplication.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,6 +31,7 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoadonchitiet);
+        TextView tv_title = findViewById(R.id.tv_title);
         TextView tv_tenhang = findViewById(R.id.tv_tenhang);
         TextView tv_dongia = findViewById(R.id.tv_dongia);
         TextView tv_soluong = findViewById(R.id.tv_soluong);
@@ -38,6 +42,15 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
         TextView tv_name = findViewById(R.id.tv_name);
         TextView tv_giovao =findViewById(R.id.tv_giovao);
         TextView tv_giora =findViewById(R.id.tv_giora);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("QUYEN", Context.MODE_PRIVATE);
+        String value = sharedPreferences.getString("quyen", "");
+        if (value.equals("admin")){
+            tv_title.setText("HOÁ ĐƠN CHI TIẾT");
+        }else {
+            tv_title.setText("XEM TRƯỚC HOÁ ĐƠN");
+        }
+
 
         Intent intent = getIntent();
         String tonggio = intent.getStringExtra("tonggio");
@@ -79,6 +92,7 @@ public class Activity_hoadonchitiet extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Activity_hoadonchitiet.this, MainActivity.class);
+                intent.putExtra("quyen",value);
                 startActivity(intent);
                 finish();
             }
