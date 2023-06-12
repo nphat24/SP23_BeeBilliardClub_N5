@@ -1,5 +1,6 @@
 package mob104.fpoly.myapplication.frag;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,6 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import mob104.fpoly.myapplication.R;
+import mob104.fpoly.myapplication.activities.Activity_thongke;
+import mob104.fpoly.myapplication.activities.AddNvActivity;
 import mob104.fpoly.myapplication.adapter.BanchoiAdapter;
 import mob104.fpoly.myapplication.adapter.GiochoiAdapter;
 import mob104.fpoly.myapplication.adapter.HoadonAdapter;
@@ -32,6 +36,8 @@ public class QLHoadonFragment extends Fragment {
     private List<HoadonModel> hoadonModels = new ArrayList<>();
     private ListView listView;
     private HoadonAdapter hoadonAdapter;
+
+    FloatingActionButton floatingActionButton;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,7 +50,7 @@ public class QLHoadonFragment extends Fragment {
         listView = view.findViewById(R.id.lv_qlhoadon);
         hoadonAdapter = new HoadonAdapter(getContext(),hoadonModels);
         listView.setAdapter(hoadonAdapter);
-
+        floatingActionButton = view.findViewById(R.id.floatingActionButton);
 
         ref.child("Bill").addValueEventListener(new ValueEventListener() {
             @Override
@@ -63,6 +69,11 @@ public class QLHoadonFragment extends Fragment {
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
+        });
+
+        floatingActionButton.setOnClickListener(v->{
+            Intent intent = new Intent(getContext(), Activity_thongke.class);
+            startActivity(intent);
         });
 
 
