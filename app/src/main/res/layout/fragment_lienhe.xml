@@ -50,7 +50,7 @@
         android:layout_marginVertical="10dp"
         android:textColor="@color/white"
         android:background="@drawable/bg_btn_sign_in"
-        android:text="Facebook Bê Billards Club"
+        android:text="Facebook Bia Billards Club"
         android:textSize="20sp"
         android:textStyle="bold" />
     <TextView
