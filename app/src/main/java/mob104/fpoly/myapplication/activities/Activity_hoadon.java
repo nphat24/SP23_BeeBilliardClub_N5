@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,6 +26,14 @@ public class Activity_hoadon extends AppCompatActivity {
         TextView tv_khachcantra = findViewById(R.id.tv_khachcantra);
         TextView tv_khachdathanhtoan = findViewById(R.id.tv_khachdathanhtoan);
         Button btn = findViewById(R.id.btn_hoantatthanhtoan);
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         String tonggio = intent.getStringExtra("tonggio");

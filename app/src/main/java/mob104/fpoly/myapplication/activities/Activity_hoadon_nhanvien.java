@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.MaterialToolbar;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -29,6 +31,13 @@ public class Activity_hoadon_nhanvien extends AppCompatActivity {
         TextView tv_total_money2 = findViewById(R.id.tv_total_money2);
         Button btn_huy = findViewById(R.id.btn_huy);
         Button btn_hoantat = findViewById(R.id.btn_hoantat);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         String stringStartTime = intent.getStringExtra("start");
