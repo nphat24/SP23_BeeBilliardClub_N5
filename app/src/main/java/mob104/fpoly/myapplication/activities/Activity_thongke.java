@@ -3,11 +3,14 @@ package mob104.fpoly.myapplication.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,14 +32,21 @@ public class Activity_thongke extends AppCompatActivity {
     int countTable = 0;
     TextView tvCountBill;
     TextView tvCountTable;
+    TextView tvCurrent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thongke);
-        String currentDate = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault()).format(new Date());
         tvCountBill = findViewById(R.id.tv_count_bill);
         tvCountTable = findViewById(R.id.tv_count_table);
+        tvCurrent = findViewById(R.id.tv_current);
+        tvCurrent.setText(currentDate);
+
+
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
 
         billReference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -103,5 +113,13 @@ public class Activity_thongke extends AppCompatActivity {
                 // Xử lý lỗi nếu cần
             }
         });
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
+
 }
