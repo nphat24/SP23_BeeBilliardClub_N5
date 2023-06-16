@@ -100,15 +100,16 @@ public class SignInActivity extends AppCompatActivity {
                                     rememberUser(strUser, strPass, cb_luumk.isChecked());
                                     Intent intent = new Intent(SignInActivity.this, MainActivity.class);
                                     intent.putExtra("user", strUser);
-                                    intent.putExtra("start", start);
                                     SharedPreferences pref = getSharedPreferences("QUYEN",MODE_PRIVATE);
                                     SharedPreferences.Editor editor = pref.edit();
                                     if (group.equals("admin")){
                                         intent.putExtra("quyen","admin");
+                                        intent.putExtra("start", start);
                                         editor.putString("quyen","admin");
                                         editor.commit();
                                     }else {
                                         intent.putExtra("quyen", "user");
+                                        intent.putExtra("start", start);
                                         editor.putString("quyen","user");
                                         editor.commit();
                                     }
