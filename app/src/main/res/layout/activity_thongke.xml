@@ -7,24 +7,20 @@
     android:orientation="vertical"
     tools:context=".activities.Activity_thongke"
     >
-    <androidx.appcompat.widget.Toolbar
+
+    <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="#33CC66"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        android:textSize="24dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tổng quan"
-            android:textSize="25dp"
-            android:textColor="@color/white"
-            android:textStyle="bold"
-            android:textAlignment="center"/>
+        android:textSize="24dp"
+        app:navigationIcon="@drawable/arrow_back_24"
+        app:title="Tổng quan"
+        app:titleTextColor="@color/white"
+        app:titleCentered="true"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
 
-    </androidx.appcompat.widget.Toolbar>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,13 +43,14 @@
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
+
             <TextView
+               android:id="@+id/tv_current"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="17/5/2023"
                 android:textColor="@color/black"
-                android:textSize="20dp"
-                />
+                android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
 

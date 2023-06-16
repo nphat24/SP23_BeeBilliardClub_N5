@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -59,6 +60,15 @@ public class Activity_banchoi extends AppCompatActivity {
         Button btnHuy = findViewById(R.id.btn_Cancel_qlgiochoi_ql);
         Button btnHoantat = findViewById(R.id.btn_hoantat_qlgiochoi_ql);
         Button btnDung = findViewById(R.id.btn_dung_qlgiochoi_ql);
+
+
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Intent intent = getIntent();
         String stringStartTime = intent.getStringExtra("start");

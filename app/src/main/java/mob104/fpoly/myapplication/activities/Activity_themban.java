@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -38,6 +39,13 @@ public class Activity_themban extends AppCompatActivity {
         EditText edt_gia = findViewById(R.id.ed_gia_gio_themban_ql);
         Button btn_huy = findViewById(R.id.btn_Cancel_thembanql);
         Button btn_them = findViewById(R.id.btn_Them_thembanql);
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         btn_them.setOnClickListener(new View.OnClickListener() {
             @Override
