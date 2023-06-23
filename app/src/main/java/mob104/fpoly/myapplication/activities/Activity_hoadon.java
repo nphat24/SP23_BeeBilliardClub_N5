@@ -10,8 +10,12 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.appbar.MaterialToolbar;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import mob104.fpoly.myapplication.R;
 
@@ -51,10 +55,26 @@ public class Activity_hoadon extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String path ="Table/" + position;
-                DatabaseReference ref = database.getReference(path);
-                ref.child("start").setValue("");
-                ref.child("end").setValue("");
+                DatabaseReference ref = database.getReference("Table");
+                Query query = ref.orderByChild("name").equalTo(name);
+
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+
+                        for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                            DatabaseReference userRef = userSnapshot.getRef();
+                            userRef.child("start").setValue("");
+                            userRef.child("end").setValue("");
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+                        // Xử lý khi có lỗi xảy ra
+                    }
+                });
+
 
 
 

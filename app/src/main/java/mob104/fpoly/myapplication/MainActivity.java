@@ -8,6 +8,7 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
@@ -133,6 +134,26 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "Bạn không thể quay lại ở màn hình này", Toast.LENGTH_SHORT).show();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        Intent intent = getIntent();
+        String quyen = intent.getStringExtra("quyen");
+        if (quyen.equals("admin")) {
+            getMenuInflater().inflate(R.menu.menu_actionbar,menu);
+        }
+        return super.onCreateOptionsMenu(menu);
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.icon_search:
+
+                startActivity(new Intent(MainActivity.this, SearchActivity.class));
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 }
