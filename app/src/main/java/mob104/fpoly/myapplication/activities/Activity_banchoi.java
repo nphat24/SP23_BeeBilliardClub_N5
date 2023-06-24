@@ -143,6 +143,7 @@ public class Activity_banchoi extends AppCompatActivity {
                             DatabaseReference userRef = userSnapshot.getRef();
                             userRef.child("start").setValue("");
                         }
+                        finish();
                     }
 
                     @Override
